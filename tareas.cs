@@ -1,11 +1,11 @@
 
 namespace EspacioTareas
 {
-    public class tarea
+    public class Tarea
     {
         private int id = 1000;
-        private string descripcion;
-        private int duracion;
+        public string descripcion;
+        public int duracion;
 
         public int Id
         {
@@ -15,7 +15,7 @@ namespace EspacioTareas
         public string Descripcion
         {
             get => descripcion;
-            set => descripcion = value
+            set => descripcion = value;
         }
 
         public int Duracion
@@ -23,5 +23,20 @@ namespace EspacioTareas
             get => duracion;
             set => duracion = value;
         }
+
+        public Tarea (int i, string descripcion, int duracion)
+        {
+            this.id += i;
+            this.descripcion = descripcion;
+            this.duracion = duracion;
+        }
+
+        public void MostrarTarea()
+        {
+            Console.WriteLine($"--TAREA {id}--");
+            Console.WriteLine($"Descripción: {descripcion}");
+            Console.WriteLine($"Duración: {duracion} min");
+        }
+
     }
 }
