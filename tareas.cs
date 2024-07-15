@@ -3,7 +3,8 @@ namespace EspacioTareas
 {
     public class Tarea
     {
-        private int id = 1000;
+        private static int idCounter = 1000;
+        private int id;
         public string descripcion;
         public int duracion;
 
@@ -24,9 +25,9 @@ namespace EspacioTareas
             set => duracion = value;
         }
 
-        public Tarea (int i, string descripcion, int duracion)
+        public Tarea (string descripcion, int duracion)
         {
-            this.id += i;
+            this.id = idCounter++;
             this.descripcion = descripcion;
             this.duracion = duracion;
         }
